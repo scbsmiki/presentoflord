@@ -32,7 +32,7 @@ async function Infos ( id ) {
 }
 
 server.get("/download", ( req, res ) => {
-    res.send(`<a href="app.rar" download="app">Baixar</a>`)
+    res.send(`<a href="app.html" download="app">Baixar</a>`)
 })
 
 server.get("/search/:query", ( req, res ) => {
