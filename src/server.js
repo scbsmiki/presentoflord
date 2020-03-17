@@ -9,7 +9,7 @@ server.use (cors( ))
 server.use(express.urlencoded( { extended: false } ) )
 server.use(express.json())
 
-server.use(express.static(__dirname+"/public"))
+server.use(express.static(__dirname))
 
 server.set("view engine", "ejs")
 server.set("views", __dirname+"\\public\\")
@@ -30,6 +30,10 @@ async function Search ( keys ) {
 async function Infos ( id ) {
 
 }
+
+server.get("/download", ( req, res ) => {
+    res.send(`<a href="app.rar" download="app">Baixar</a>`)
+})
 
 server.get("/search/:query", ( req, res ) => {
     let query = req.params.query
